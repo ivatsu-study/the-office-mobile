@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "the-office-mobile",
+    "name": "The Office Mobile",
     "slug": "the-office-mobile",
+    "owner": "ivts",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

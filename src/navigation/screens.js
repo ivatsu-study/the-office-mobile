@@ -1,0 +1,5 @@
+export const CHARACTERS_SCREEN_NAME = "CHARACTERS";
+export const CREW_SCREEN_NAME = "CREW";
+export const EPISODES_SCREEN_NAME = "EPISODES";
+export const HOME_SCREEN_NAME = "HOME";
+export const QUOTES_SCREEN_NAME = "QUOTES";

@@ -1,6 +1,6 @@
 import { Text, View, TouchableOpacity } from "react-native";
 
-import AppContainer from "../components/shared/AppContainer";
+import AppContainer from "../components/shared/AppContainer/AppContainer";
 import {
   CHARACTERS_SCREEN_NAME,
   CREW_SCREEN_NAME,

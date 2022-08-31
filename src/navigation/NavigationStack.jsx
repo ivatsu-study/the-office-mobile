@@ -1,5 +1,5 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import {
   CharactersScreen,
@@ -7,7 +7,7 @@ import {
   EpisodesScreen,
   HomeScreen,
   QuotesScreen,
-} from "../screens";
+} from '../screens';
 
 import {
   CHARACTERS_SCREEN_NAME,
@@ -15,7 +15,7 @@ import {
   EPISODES_SCREEN_NAME,
   HOME_SCREEN_NAME,
   QUOTES_SCREEN_NAME,
-} from "./screens";
+} from './screens';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,7 +30,7 @@ function NavigationStack() {
         <Stack.Screen name={CREW_SCREEN_NAME} component={CrewScreen} />
       </Stack.Navigator>
     </NavigationContainer>
-  )
+  );
 }
 
 export default NavigationStack;

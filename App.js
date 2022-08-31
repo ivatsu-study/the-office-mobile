@@ -1,4 +1,5 @@
-import NavigationStack from "./src/navigation/NavigationStack";
+import React from 'react';
+import NavigationStack from './src/navigation/NavigationStack';
 
 export default function App() {
   return <NavigationStack />;

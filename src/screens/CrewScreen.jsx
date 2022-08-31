@@ -1,5 +1,5 @@
 import { Text, View } from "react-native";
-import AppContainer from "../components/shared/AppContainer";
+import AppContainer from "../components/shared/AppContainer/AppContainer";
 
 function CrewScreen() {
   return (

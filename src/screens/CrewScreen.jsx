@@ -1,5 +1,5 @@
-import { Text, View } from "react-native";
-import AppContainer from "../components/shared/AppContainer/AppContainer";
+import { Text, View } from 'react-native';
+import AppContainer from '../components/shared/AppContainer/AppContainer';
 
 function CrewScreen() {
   return (
@@ -8,7 +8,7 @@ function CrewScreen() {
         <Text>Crew</Text>
       </View>
     </AppContainer>
-  )
+  );
 }
 
 export default CrewScreen;

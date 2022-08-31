@@ -1,8 +1,8 @@
-import CharactersScreen from "./CharactersScreen";
-import CrewScreen from "./CrewScreen";
-import EpisodesScreen from "./EpisodesScreen";
-import HomeScreen from "./HomeScreen";
-import QuotesScreen from "./QuotesScreen";
+import CharactersScreen from './CharactersScreen';
+import CrewScreen from './CrewScreen';
+import EpisodesScreen from './EpisodesScreen';
+import HomeScreen from './HomeScreen';
+import QuotesScreen from './QuotesScreen';
 
 export {
   CharactersScreen,

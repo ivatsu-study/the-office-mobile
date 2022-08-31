@@ -1,5 +1,5 @@
-import { Text, View } from "react-native";
-import AppContainer from "../components/shared/AppContainer/AppContainer";
+import { Text, View } from 'react-native';
+import AppContainer from '../components/shared/AppContainer/AppContainer';
 
 function EpisodesScreen() {
   return (
@@ -8,7 +8,7 @@ function EpisodesScreen() {
         <Text>Episodes</Text>
       </View>
     </AppContainer>
-  )
+  );
 }
 
 export default EpisodesScreen;

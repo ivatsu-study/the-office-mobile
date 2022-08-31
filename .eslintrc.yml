@@ -12,8 +12,7 @@ parserOptions:
 plugins:
   - react
   - react-native
-rules: {
+rules:
   react/style-prop-object:
-    # allow StatusBar prop to be String
-    allow: [StatusBar]
-}
+    - 2
+    - allow: ["StatusBar"]

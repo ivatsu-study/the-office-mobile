@@ -16,3 +16,6 @@ rules:
   react/style-prop-object:
     - 2
     - allow: ["StatusBar"]
+  no-underscore-dangle:
+    - 1
+    - allow: ["_id"]

@@ -4,8 +4,7 @@ import {
 import PropTypes from 'prop-types';
 
 import OfficeMainImage from '../../../assets/office.png';
-import AppContainer from '../../components/shared/AppContainer/AppContainer';
-import NavButton from '../../components/shared/NavButton/NavButton';
+import { AppContainer, NavButton } from '../../components/shared';
 import {
   CHARACTERS_SCREEN_NAME,
   CREW_SCREEN_NAME,

@@ -1,8 +1,8 @@
-import { ScrollView, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { useQuery } from '@tanstack/react-query';
 
 import { GET_QUOTES } from '../../api/url';
-import AppContainer from '../../components/shared/AppContainer/AppContainer';
+import { AppContainer, ScrollViewContainer } from '../../components/shared';
 
 import styles from './styles';
 
@@ -17,14 +17,14 @@ function QuotesScreen() {
 
   return (
     <AppContainer withStatusBar>
-      <ScrollView style={styles.scrollContainer}>
+      <ScrollViewContainer>
         {data?.data.map((quote) => (
           <View key={quote._id} style={styles.quoteContainer}>
             <Text style={styles.quoteText}>{quote.content}</Text>
             <Text style={styles.quouteAuthor}>{`${quote.character.firstname} ${quote.character.lastname}`}</Text>
           </View>
         ))}
-      </ScrollView>
+      </ScrollViewContainer>
     </AppContainer>
   );
 }

@@ -1,8 +1,8 @@
-import { ScrollView, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { useQuery } from '@tanstack/react-query';
 
 import { GET_CHARACTERS } from '../../api/url';
-import AppContainer from '../../components/shared/AppContainer/AppContainer';
+import { AppContainer, ScrollViewContainer } from '../../components/shared';
 
 function CharactersScreen() {
   const { isLoading, error, data } = useQuery(['charactersData'], () => fetch(GET_CHARACTERS).then((res) => res.json()));
@@ -15,16 +15,13 @@ function CharactersScreen() {
 
   return (
     <AppContainer withStatusBar>
-      <View>
-        <Text>Characters</Text>
-      </View>
-      <ScrollView>
+      <ScrollViewContainer>
         {data?.data.map((character) => (
           <View key={character._id}>
             <Text>{`${character.firstname} ${character.lastname}`}</Text>
           </View>
         ))}
-      </ScrollView>
+      </ScrollViewContainer>
     </AppContainer>
   );
 }

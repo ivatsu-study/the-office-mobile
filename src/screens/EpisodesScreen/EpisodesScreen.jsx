@@ -1,8 +1,8 @@
 import { ScrollView, Text, View } from 'react-native';
 import { useQuery } from '@tanstack/react-query';
 
-import { GET_EPISODES } from '../api/url';
-import AppContainer from '../components/shared/AppContainer/AppContainer';
+import { GET_EPISODES } from '../../api/url';
+import AppContainer from '../../components/shared/AppContainer/AppContainer';
 
 function EpisodesScreen() {
   const { isLoading, error, data } = useQuery(['episodesData'], () => fetch(GET_EPISODES).then((res) => res.json()));

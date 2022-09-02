@@ -1,8 +1,8 @@
-import { ScrollView, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { useQuery } from '@tanstack/react-query';
 
 import { GET_EPISODES } from '../../api/url';
-import AppContainer from '../../components/shared/AppContainer/AppContainer';
+import { AppContainer, ScrollViewContainer } from '../../components/shared';
 
 function EpisodesScreen() {
   const { isLoading, error, data } = useQuery(['episodesData'], () => fetch(GET_EPISODES).then((res) => res.json()));
@@ -15,22 +15,23 @@ function EpisodesScreen() {
 
   return (
     <AppContainer withStatusBar>
-      <View>
-        <Text>Episodes</Text>
-      </View>
-      <ScrollView>
+      <ScrollViewContainer>
         {data?.data.map((episode) => (
           <View key={episode._id}>
-            <Text>{episode.airDate}</Text>
-            <Text>{episode.description}</Text>
-            <Text>{episode.description}</Text>
-            <Text>{`${episode.director.firstname} ${episode.director.lastname}`}</Text>
             <Text>{episode.title}</Text>
-            <Text>{episode.writer.name}</Text>
-            <Text>{episode.writer.role}</Text>
+            <Text>{episode.description}</Text>
+            {episode.director.firstname && episode.director.lastname && (
+              <Text>{`${episode.director.firstname} ${episode.director.lastname}`}</Text>
+            )}
+            <Text>
+              {episode.writer.name}
+              {' '}
+              {`(${episode.writer.role})`}
+            </Text>
+            <Text>{episode.airDate}</Text>
           </View>
         ))}
-      </ScrollView>
+      </ScrollViewContainer>
     </AppContainer>
   );
 }

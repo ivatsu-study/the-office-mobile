@@ -18,8 +18,7 @@ function CrewScreen() {
       <ScrollViewContainer>
         {data?.data.map((crewMember) => (
           <View key={crewMember._id}>
-            <Text>{crewMember.name}</Text>
-            <Text>{crewMember.role}</Text>
+            <Text>{`${crewMember.name} (${crewMember.role})`}</Text>
           </View>
         ))}
       </ScrollViewContainer>

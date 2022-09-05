@@ -1,8 +1,8 @@
-import { ScrollView, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { useQuery } from '@tanstack/react-query';
 
 import { GET_CREW } from '../../api/url';
-import AppContainer from '../../components/shared/AppContainer/AppContainer';
+import { AppContainer, ScrollViewContainer } from '../../components/shared';
 
 function CrewScreen() {
   const { isLoading, error, data } = useQuery(['crewData'], () => fetch(GET_CREW).then((res) => res.json()));
@@ -15,17 +15,14 @@ function CrewScreen() {
 
   return (
     <AppContainer withStatusBar>
-      <View>
-        <Text>Crew</Text>
-      </View>
-      <ScrollView>
+      <ScrollViewContainer>
         {data?.data.map((crewMember) => (
           <View key={crewMember._id}>
             <Text>{crewMember.name}</Text>
             <Text>{crewMember.role}</Text>
           </View>
         ))}
-      </ScrollView>
+      </ScrollViewContainer>
     </AppContainer>
   );
 }

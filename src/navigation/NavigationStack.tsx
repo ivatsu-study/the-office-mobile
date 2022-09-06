@@ -17,8 +17,9 @@ import {
   HOME_SCREEN_NAME,
   QUOTES_SCREEN_NAME,
 } from './screens';
+import { RootStackParamList } from './types';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 const queryClient = new QueryClient();
 
 function NavigationStack() {

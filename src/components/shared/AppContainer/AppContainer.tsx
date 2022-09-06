@@ -4,7 +4,12 @@ import PropTypes from 'prop-types';
 
 import styles from './styles';
 
-function AppContainer({ children, withStatusBar }) {
+type AppContainerPropTypes = {
+  children: React.ReactNode;
+  withStatusBar?: boolean;
+}
+
+function AppContainer({ children, withStatusBar }: AppContainerPropTypes) {
   return (
     <View style={styles.container}>
       {withStatusBar && (<StatusBar style="auto" />)}

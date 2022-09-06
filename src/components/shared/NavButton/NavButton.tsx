@@ -1,9 +1,14 @@
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text, GestureResponderEvent } from 'react-native';
 import PropTypes from 'prop-types';
 
 import styles from './styles';
 
-function NavButton({ onPress, navText }) {
+type NavButtonPropTypes = {
+  onPress: (event: GestureResponderEvent) => void;
+  navText: string;
+}
+
+function NavButton({ onPress, navText }: NavButtonPropTypes) {
   return (
     <TouchableOpacity onPress={onPress} style={styles.btnContainer}>
       <Text style={styles.btnText}>{navText}</Text>

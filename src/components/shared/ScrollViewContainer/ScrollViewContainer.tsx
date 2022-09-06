@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 
 import styles from './styles';
 
-function ScrollViewContainer({ children }) {
+type ScrollViewContainerPropTypes = {
+  children: React.ReactNode;
+}
+
+function ScrollViewContainer({ children }: ScrollViewContainerPropTypes) {
   return (
     <ScrollView style={styles.scrollContainer}>{children}</ScrollView>
   );

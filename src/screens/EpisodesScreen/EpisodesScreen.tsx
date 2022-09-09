@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native';
 import { useQuery } from '@tanstack/react-query';
 
-import { GET_EPISODES } from '../../api/url';
+import { fetchEpisodes } from '../../api/queries';
 import { AppContainer, ScrollViewContainer } from '../../components/shared';
 import { LoadingPrisonMikeContainer } from '../../containers/shared';
 
@@ -30,7 +30,7 @@ type Episode = {
 
 
 function EpisodesScreen() {
-  const { isLoading, error, data } = useQuery(['episodesData'], () => fetch(GET_EPISODES).then((res) => res.json()));
+  const { isLoading, error, data } = useQuery(['episodesData'], fetchEpisodes);
   if (isLoading) {
     return (
       <LoadingPrisonMikeContainer />

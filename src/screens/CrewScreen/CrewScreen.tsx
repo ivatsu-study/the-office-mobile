@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native';
 import { useQuery } from '@tanstack/react-query';
 
-import { GET_CREW } from '../../api/url';
+import { fetchCrew } from '../../api/queries';
 import { AppContainer, ScrollViewContainer } from '../../components/shared';
 import { LoadingPrisonMikeContainer } from '../../containers/shared';
 
@@ -14,7 +14,7 @@ type CrewMember = {
 }
 
 function CrewScreen() {
-  const { isLoading, error, data } = useQuery(['crewData'], () => fetch(GET_CREW).then((res) => res.json()));
+  const { isLoading, error, data } = useQuery(['crewData'], fetchCrew);
   if (isLoading) {
     return (
       <LoadingPrisonMikeContainer />

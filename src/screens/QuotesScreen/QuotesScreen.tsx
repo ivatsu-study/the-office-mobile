@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native';
 import { useQuery } from '@tanstack/react-query';
 
-import { GET_QUOTES } from '../../api/url';
+import { fetchQuotes } from '../../api/queries';
 import { AppContainer, ScrollViewContainer } from '../../components/shared';
 import { LoadingPrisonMikeContainer } from '../../containers/shared';
 
@@ -16,7 +16,7 @@ type Quote = {
 }
 
 function QuotesScreen() {
-  const { isLoading, error, data } = useQuery(['quotesData'], () => fetch(GET_QUOTES).then((res) => res.json()));
+  const { isLoading, error, data } = useQuery(['quotesData'], fetchQuotes);
   if (isLoading) {
     return (
       <LoadingPrisonMikeContainer />

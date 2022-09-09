@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native';
 import { useQuery } from '@tanstack/react-query';
 
-import { GET_CHARACTERS } from '../../api/url';
+import { fetchCharacters } from '../../api/queries';
 import { AppContainer, ScrollViewContainer } from '../../components/shared';
 import { LoadingPrisonMikeContainer } from '../../containers/shared';
 
@@ -9,7 +9,7 @@ import styles from './styles';
 import { Character } from './types';
 
 function CharactersScreen() {
-  const { isLoading, error, data } = useQuery(['charactersData'], () => fetch(GET_CHARACTERS).then((res) => res.json()));
+  const { isLoading, error, data } = useQuery(['charactersData'], fetchCharacters);
   if (isLoading) {
     return (
       <LoadingPrisonMikeContainer />

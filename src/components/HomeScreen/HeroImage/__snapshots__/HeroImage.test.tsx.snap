@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HeroImage /> renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "aspectRatio": 1.8,
+      "height": 200,
+      "width": 200,
+    }
+  }
+>
+  <Image
+    source={1}
+    style={
+      Object {
+        "height": "100%",
+        "resizeMode": "cover",
+        "width": "100%",
+      }
+    }
+  />
+</View>
+`;

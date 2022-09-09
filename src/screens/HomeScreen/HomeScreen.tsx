@@ -1,10 +1,8 @@
-import {
-  Text, View, Image,
-} from 'react-native';
+import { Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-import OfficeMainImage from '../../../assets/office.png';
+import { HeroImage } from '../../components/HomeScreen';
 import { AppContainer, NavButton } from '../../components/shared';
 import {
   CHARACTERS_SCREEN_NAME,
@@ -27,12 +25,7 @@ function HomeScreen({ navigation }: HomeScreenPropTypes) {
 
   return (
     <AppContainer withStatusBar>
-      <View style={styles.imageContainer}>
-        <Image
-          style={styles.image}
-          source={OfficeMainImage}
-        />
-      </View>
+      <HeroImage />
       <Text style={styles.headingText}>
         Quotes, facts and information on NBC’s beloved mockumentary series
         The Office.

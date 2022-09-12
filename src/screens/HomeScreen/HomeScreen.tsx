@@ -1,27 +1,26 @@
-import { Text, View } from 'react-native';
-import PropTypes from 'prop-types';
-import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { Text, View } from 'react-native'
+import type { NativeStackScreenProps } from '@react-navigation/native-stack'
 
-import { HeroImage } from '../../components/HomeScreen';
-import { AppContainer, NavButton } from '../../components/shared';
+import { HeroImage } from '../../components/HomeScreen'
+import { AppContainer, NavButton } from '../../components/shared'
 import {
   CHARACTERS_SCREEN_NAME,
   CREW_SCREEN_NAME,
   EPISODES_SCREEN_NAME,
   HOME_SCREEN_NAME,
-  QUOTES_SCREEN_NAME,
-} from '../../navigation/screens';
-import { RootStackParamList } from '../../navigation/types';
+  QUOTES_SCREEN_NAME
+} from '../../navigation/screens'
+import { IRootStackParamList } from '../../navigation/types'
 
-import styles from './styles';
+import styles from './styles'
 
-type HomeScreenPropTypes = NativeStackScreenProps<RootStackParamList, typeof HOME_SCREEN_NAME>;
+type HomeScreenPropTypes = NativeStackScreenProps<IRootStackParamList, typeof HOME_SCREEN_NAME>
 
-function HomeScreen({ navigation }: HomeScreenPropTypes) {
-  const navigateToQoutesScreen = () => navigation.navigate(QUOTES_SCREEN_NAME);
-  const navigateToCharactersScreen = () => navigation.navigate(CHARACTERS_SCREEN_NAME);
-  const navigateToEpisodesScreen = () => navigation.navigate(EPISODES_SCREEN_NAME);
-  const navigateToCrewScreen = () => navigation.navigate(CREW_SCREEN_NAME);
+const HomeScreen: React.FunctionComponent<HomeScreenPropTypes> = ({ navigation }: HomeScreenPropTypes) => {
+  const navigateToQoutesScreen: () => void = () => navigation.navigate(QUOTES_SCREEN_NAME)
+  const navigateToCharactersScreen: () => void = () => navigation.navigate(CHARACTERS_SCREEN_NAME)
+  const navigateToEpisodesScreen: () => void = () => navigation.navigate(EPISODES_SCREEN_NAME)
+  const navigateToCrewScreen: () => void = () => navigation.navigate(CREW_SCREEN_NAME)
 
   return (
     <AppContainer withStatusBar>
@@ -37,20 +36,7 @@ function HomeScreen({ navigation }: HomeScreenPropTypes) {
         <NavButton onPress={navigateToCrewScreen} navText="Crew" />
       </View>
     </AppContainer>
-  );
+  )
 }
 
-HomeScreen.propTypes = {
-  navigation: PropTypes.shape({
-    navigate: PropTypes.func,
-    reset: PropTypes.func,
-    goBack: PropTypes.func,
-    setParams: PropTypes.func,
-    dispatch: PropTypes.func,
-    setOptions: PropTypes.func,
-    isFocused: PropTypes.func,
-    addListener: PropTypes.func,
-  }).isRequired,
-};
-
-export default HomeScreen;
+export default HomeScreen

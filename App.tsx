@@ -1,5 +1,5 @@
-import NavigationStack from './src/navigation/NavigationStack';
+import NavigationStack from './src/navigation/NavigationStack'
 
-export default function App() {
-  return <NavigationStack />;
-}
+const App: React.FunctionComponent = () => <NavigationStack />
+
+export default App

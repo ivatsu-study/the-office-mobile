@@ -1,3 +1,3 @@
-import LoadingPrisonMikeContainer from './LoadingPrisonMilkeContainer/LoadingPrisonMikeContainer';
+import LoadingPrisonMikeContainer from './LoadingPrisonMilkeContainer/LoadingPrisonMikeContainer'
 
-export { LoadingPrisonMikeContainer };
+export { LoadingPrisonMikeContainer }

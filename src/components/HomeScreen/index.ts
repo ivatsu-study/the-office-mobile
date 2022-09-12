@@ -1,3 +1,3 @@
-import HeroImage from "./HeroImage/HeroImage";
+import HeroImage from './HeroImage/HeroImage'
 
-export { HeroImage };
+export { HeroImage }

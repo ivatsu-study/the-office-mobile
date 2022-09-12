@@ -1,14 +1,14 @@
-import React from 'react';
-import { Animated, View } from 'react-native';
+import React from 'react'
+import { Animated, View } from 'react-native'
 
-import PrisonMikeLoadingImage from '../../../../assets/prison-mike.png';
-import styles from './styles';
+import PrisonMikeLoadingImage from '../../../../assets/prison-mike.png'
+import styles from './styles'
 
-type LoadingPrisonMikePropTypes = {
+interface ILoadingPrisonMikePropTypes {
   spin: Animated.AnimatedInterpolation
 }
 
-const LoadingPrisonMike: React.FunctionComponent<LoadingPrisonMikePropTypes> = ({ spin }) => (
+const LoadingPrisonMike: React.FunctionComponent<ILoadingPrisonMikePropTypes> = ({ spin }) => (
   <View style={styles.loadingContainer}>
     <Animated.Image
       style={[
@@ -18,6 +18,6 @@ const LoadingPrisonMike: React.FunctionComponent<LoadingPrisonMikePropTypes> = (
       source={PrisonMikeLoadingImage}
     />
   </View>
-);
+)
 
-export default React.memo(LoadingPrisonMike);
+export default React.memo(LoadingPrisonMike)

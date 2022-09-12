@@ -1,28 +1,28 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 import {
   CharactersScreen,
   CrewScreen,
   EpisodesScreen,
   HomeScreen,
-  QuotesScreen,
-} from '../screens';
+  QuotesScreen
+} from '../screens'
 
 import {
   CHARACTERS_SCREEN_NAME,
   CREW_SCREEN_NAME,
   EPISODES_SCREEN_NAME,
   HOME_SCREEN_NAME,
-  QUOTES_SCREEN_NAME,
-} from './screens';
-import { RootStackParamList } from './types';
+  QUOTES_SCREEN_NAME
+} from './screens'
+import { IRootStackParamList } from './types'
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
-const queryClient = new QueryClient();
+const Stack = createNativeStackNavigator<IRootStackParamList>()
+const queryClient = new QueryClient()
 
-function NavigationStack() {
+const NavigationStack: React.FunctionComponent = () => {
   return (
     <NavigationContainer>
       <QueryClientProvider client={queryClient}>
@@ -35,7 +35,7 @@ function NavigationStack() {
         </Stack.Navigator>
       </QueryClientProvider>
     </NavigationContainer>
-  );
+  )
 }
 
-export default NavigationStack;
+export default NavigationStack

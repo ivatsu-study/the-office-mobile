@@ -1,7 +1,3 @@
-export type RootStackParamList = {
-  HOME: undefined;
-  QUOTES: undefined;
-  CHARACTERS: undefined;
-  EPISODES: undefined;
-  CREW: undefined;
-};
+export interface IRootStackParamList {
+  [prop: string]: undefined
+}

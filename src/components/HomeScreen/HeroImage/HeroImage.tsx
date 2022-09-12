@@ -1,7 +1,7 @@
-import { View, Image } from 'react-native';
+import { View, Image } from 'react-native'
 
-import OfficeMainImage from '../../../../assets/office.png';
-import styles from './styles';
+import OfficeMainImage from '../../../../assets/office.png'
+import styles from './styles'
 
 const HeroImage: React.FunctionComponent = () => (
   <View style={styles.imageContainer}>
@@ -10,6 +10,6 @@ const HeroImage: React.FunctionComponent = () => (
       source={OfficeMainImage}
     />
   </View>
-);
+)
 
-export default HeroImage;
+export default HeroImage

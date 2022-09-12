@@ -1,6 +1,24 @@
-import { CHARACTERS, CREW, EPISODES, QUOTES } from './url';
+import { ICharacter, ICrewMember, IEpisode, IQuote } from './types'
+import { CHARACTERS, CREW, EPISODES, QUOTES } from './url'
 
-export const fetchCharacters = () => fetch(CHARACTERS).then((res) => res.json());
-export const fetchCrew = () => fetch(CREW).then((res) => res.json());
-export const fetchEpisodes = () => fetch(EPISODES).then((res) => res.json());
-export const fetchQuotes = () => fetch(QUOTES).then((res) => res.json());
+async function request<T> (url: string): Promise<T> {
+  const response = await fetch(url)
+  const { data } = await response.json()
+  return data
+}
+
+export async function fetchCharacters (): Promise<ICharacter[]> {
+  return await request(CHARACTERS)
+}
+
+export async function fetchCrew (): Promise<ICrewMember[]> {
+  return await request(CREW)
+}
+
+export async function fetchEpisodes (): Promise<IEpisode[]> {
+  return await request(EPISODES)
+}
+
+export async function fetchQuotes (): Promise<IQuote[]> {
+  return await request(QUOTES)
+}

@@ -1,13 +1,13 @@
-import React from 'react';
-import { Animated, Easing } from 'react-native';
-import LoadingPrisonMike from '../../../components/shared/LoadingPrisonMike/LoadingPrisonMike';
+import React from 'react'
+import { Animated, Easing } from 'react-native'
+import LoadingPrisonMike from '../../../components/shared/LoadingPrisonMike/LoadingPrisonMike'
 
-function LoadingPrisonMikeContainer() {
-  const spinValue = React.useRef(new Animated.Value(0)).current;
+const LoadingPrisonMikeContainer: React.FunctionComponent = () => {
+  const spinValue = React.useRef(new Animated.Value(0)).current
   const spin = spinValue.interpolate({
     inputRange: [0, 1],
-    outputRange: ['0deg', '360deg'],
-  });
+    outputRange: ['0deg', '360deg']
+  })
 
   React.useEffect(() => {
     Animated.loop(
@@ -16,16 +16,16 @@ function LoadingPrisonMikeContainer() {
           toValue: 1,
           duration: 1500,
           easing: Easing.linear,
-          useNativeDriver: true,
+          useNativeDriver: true
         }),
-        Animated.delay(2000),
+        Animated.delay(2000)
       ])
-    ).start();
-  }, []);
+    ).start()
+  }, [])
 
   return (
     <LoadingPrisonMike spin={spin} />
-  );
+  )
 }
 
-export default LoadingPrisonMikeContainer;
+export default LoadingPrisonMikeContainer

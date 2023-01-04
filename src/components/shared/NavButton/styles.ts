@@ -6,13 +6,13 @@ const style = StyleSheet.create({
     padding: 12,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#BFC3C6'
+    backgroundColor: '#BFC3C6',
   },
   btnText: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#2D2D2D'
-  }
+    color: '#2D2D2D',
+  },
 })
 
 export default style

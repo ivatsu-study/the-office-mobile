@@ -9,5 +9,5 @@ export {
   CrewScreen,
   EpisodesScreen,
   HomeScreen,
-  QuotesScreen
+  QuotesScreen,
 }

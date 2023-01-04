@@ -5,13 +5,13 @@ const styles = StyleSheet.create({
     margin: 12,
     fontSize: 20,
     fontWeight: 'bold',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   navButtonContainer: {
     flex: 1,
     width: '80%',
-    justifyContent: 'center'
-  }
+    justifyContent: 'center',
+  },
 })
 
 export default styles

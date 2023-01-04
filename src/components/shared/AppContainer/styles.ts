@@ -5,8 +5,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#ffffff',
     alignItems: 'center',
-    justifyContent: 'flex-start'
-  }
+    justifyContent: 'flex-start',
+  },
 })
 
 export default styles

@@ -11,14 +11,10 @@ import styles from './styles'
 const CrewScreen: React.FunctionComponent = () => {
   const { isLoading, error, data } = useQuery(['crewData'], fetchCrew)
   if (isLoading) {
-    return (
-      <LoadingPrisonMikeContainer />
-    )
+    return <LoadingPrisonMikeContainer />
   }
   if (error instanceof Error) {
-    return (
-      <Text>{`An error has occurred: ${error.message}`}</Text>
-    )
+    return <Text>{`An error has occurred: ${error.message}`}</Text>
   }
 
   return (
@@ -26,7 +22,9 @@ const CrewScreen: React.FunctionComponent = () => {
       <ScrollViewContainer>
         {data?.map((crewMember: ICrewMember) => (
           <View key={crewMember._id} style={styles.crewContainer}>
-            <Text style={styles.crewMember}>{`${crewMember.name} (${crewMember.role})`}</Text>
+            <Text
+              style={styles.crewMember}
+            >{`${crewMember.name} (${crewMember.role})`}</Text>
           </View>
         ))}
       </ScrollViewContainer>

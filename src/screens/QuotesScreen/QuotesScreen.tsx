@@ -12,28 +12,28 @@ import styles from './styles'
 const QuotesScreen: React.FunctionComponent = () => {
   const { isLoading, error, data } = useQuery(['quotesData'], fetchQuotes)
   if (isLoading) {
-    return (
-      <LoadingPrisonMikeContainer />
-    )
+    return <LoadingPrisonMikeContainer />
   }
   if (error instanceof Error) {
-    return (
-      <Text>{`An error has occurred: ${error.message}`}</Text>
-    )
+    return <Text>{`An error has occurred: ${error.message}`}</Text>
   }
 
   return (
     <AppContainer withStatusBar>
-      {data !== undefined
-        ? (<ScrollViewContainer>
+      {data !== undefined ? (
+        <ScrollViewContainer>
           {data?.map((quote: IQuote) => (
             <View key={quote._id} style={styles.quoteContainer}>
               <Text style={styles.quoteText}>{quote.content}</Text>
-              <Text style={styles.quouteAuthor}>{`${quote.character.firstname} ${quote.character.lastname}`}</Text>
+              <Text
+                style={styles.quouteAuthor}
+              >{`${quote.character.firstname} ${quote.character.lastname}`}</Text>
             </View>
           ))}
-        </ScrollViewContainer>)
-        : (<Text>Oops! There&apos;s nothing to show 😱</Text>)}
+        </ScrollViewContainer>
+      ) : (
+        <Text>Oops! There&apos;s nothing to show 😱</Text>
+      )}
     </AppContainer>
   )
 }

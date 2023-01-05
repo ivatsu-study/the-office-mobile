@@ -11,14 +11,10 @@ import styles from './styles'
 const EpisodesScreen: React.FunctionComponent = () => {
   const { isLoading, error, data } = useQuery(['episodesData'], fetchEpisodes)
   if (isLoading) {
-    return (
-      <LoadingPrisonMikeContainer />
-    )
+    return <LoadingPrisonMikeContainer />
   }
   if (error instanceof Error) {
-    return (
-      <Text>{`An error has occurred: ${error.message}`}</Text>
-    )
+    return <Text>{`An error has occurred: ${error.message}`}</Text>
   }
 
   return (
@@ -27,14 +23,16 @@ const EpisodesScreen: React.FunctionComponent = () => {
         {data?.map((episode: IEpisode) => (
           <View key={episode._id} style={styles.episodeContainer}>
             <Text style={styles.episodeTitle}>{episode.title}</Text>
-            <Text style={styles.episodeAirDate}>{`${new Date(episode.airDate).getUTCDate()}/${new Date(episode.airDate).getMonth()}/${new Date(episode.airDate).getFullYear()}`}</Text>
+            <Text style={styles.episodeAirDate}>{`${new Date(
+              episode.airDate,
+            ).getUTCDate()}/${new Date(episode.airDate).getMonth()}/${new Date(
+              episode.airDate,
+            ).getFullYear()}`}</Text>
             <Text style={styles.episodeDescription}>{episode.description}</Text>
             <View style={styles.episodeDirector}>
               <Text>{`${episode.director.name} (${episode.director.role})`}</Text>
               <Text>
-                {episode.writer.name}
-                {' '}
-                {`(${episode.writer.role})`}
+                {episode.writer.name} {`(${episode.writer.role})`}
               </Text>
             </View>
           </View>

@@ -22,7 +22,7 @@ type HomeScreenPropTypes = NativeStackScreenProps<
 const HomeScreen: React.FunctionComponent<HomeScreenPropTypes> = ({
   navigation,
 }: HomeScreenPropTypes) => {
-  const navigateToQoutesScreen: () => void = () =>
+  const navigateToQuotesScreen: () => void = () =>
     navigation.navigate(QUOTES_SCREEN_NAME)
   const navigateToCharactersScreen: () => void = () =>
     navigation.navigate(CHARACTERS_SCREEN_NAME)
@@ -39,7 +39,7 @@ const HomeScreen: React.FunctionComponent<HomeScreenPropTypes> = ({
         Office.
       </Text>
       <View style={styles.navButtonContainer}>
-        <NavButton onPress={navigateToQoutesScreen} navText="Quotes" />
+        <NavButton onPress={navigateToQuotesScreen} navText="Quotes" />
         <NavButton onPress={navigateToCharactersScreen} navText="Characters" />
         <NavButton onPress={navigateToEpisodesScreen} navText="Episodes" />
         <NavButton onPress={navigateToCrewScreen} navText="Crew" />

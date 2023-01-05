@@ -26,7 +26,7 @@ const QuotesScreen: React.FunctionComponent = () => {
             <View key={quote._id} style={styles.quoteContainer}>
               <Text style={styles.quoteText}>{quote.content}</Text>
               <Text
-                style={styles.quouteAuthor}
+                style={styles.quoteAuthor}
               >{`${quote.character.firstname} ${quote.character.lastname}`}</Text>
             </View>
           ))}

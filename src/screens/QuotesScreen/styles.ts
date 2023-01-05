@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'justify',
   },
-  quouteAuthor: {
+  quoteAuthor: {
     marginVertical: 12,
     fontSize: 18,
     fontWeight: '600',

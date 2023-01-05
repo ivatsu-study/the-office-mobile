@@ -1,5 +1,5 @@
 import { ICharacter, ICrewMember, IEpisode, IQuote } from './types'
-import { CHARACTERS, CREW, EPISODES, QUOTES } from './url'
+import { CHARACTERS, CREW, EPISODES, QUOTES, RANDOM_QUOTE } from './url'
 
 async function request<T>(url: string): Promise<T> {
   const response = await fetch(url)
@@ -21,4 +21,8 @@ export async function fetchEpisodes(): Promise<IEpisode[]> {
 
 export async function fetchQuotes(): Promise<IQuote[]> {
   return await request(QUOTES)
+}
+
+export async function fetchRandomQuote(): Promise<IQuote> {
+  return await request(RANDOM_QUOTE)
 }

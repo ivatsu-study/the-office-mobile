@@ -1,5 +1,11 @@
-export const CHARACTERS_SCREEN_NAME = 'CHARACTERS'
-export const CREW_SCREEN_NAME = 'CREW'
-export const EPISODES_SCREEN_NAME = 'EPISODES'
-export const HOME_SCREEN_NAME = 'HOME'
-export const QUOTES_SCREEN_NAME = 'QUOTES'
+export const CHARACTERS_SCREEN = Object.freeze({
+  NAME: 'CHARACTERS',
+  TITLE: 'Characters',
+})
+export const CREW_SCREEN = Object.freeze({ NAME: 'CREW', TITLE: 'Crew' })
+export const EPISODES_SCREEN = Object.freeze({
+  NAME: 'EPISODES',
+  TITLE: 'Episodes',
+})
+export const HOME_SCREEN = Object.freeze({ NAME: 'HOME', TITLE: 'Home' })
+export const QUOTES_SCREEN = Object.freeze({ NAME: 'QUOTES', TITLE: 'Quotes' })

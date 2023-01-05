@@ -10,11 +10,11 @@ import {
 } from '../screens'
 
 import {
-  CHARACTERS_SCREEN_NAME,
-  CREW_SCREEN_NAME,
-  EPISODES_SCREEN_NAME,
-  HOME_SCREEN_NAME,
-  QUOTES_SCREEN_NAME,
+  CHARACTERS_SCREEN,
+  CREW_SCREEN,
+  EPISODES_SCREEN,
+  HOME_SCREEN,
+  QUOTES_SCREEN,
 } from './screens'
 import { IRootStackParamList } from './types'
 
@@ -23,15 +23,43 @@ const Stack = createNativeStackNavigator<IRootStackParamList>()
 const NavigationStack: React.FunctionComponent = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={HOME_SCREEN_NAME}>
-        <Stack.Screen name={HOME_SCREEN_NAME} component={HomeScreen} />
-        <Stack.Screen name={QUOTES_SCREEN_NAME} component={QuotesScreen} />
+      <Stack.Navigator initialRouteName={HOME_SCREEN.NAME}>
         <Stack.Screen
-          name={CHARACTERS_SCREEN_NAME}
-          component={CharactersScreen}
+          name={HOME_SCREEN.NAME}
+          component={HomeScreen}
+          options={{
+            headerShown: false,
+            title: HOME_SCREEN.TITLE,
+          }}
         />
-        <Stack.Screen name={EPISODES_SCREEN_NAME} component={EpisodesScreen} />
-        <Stack.Screen name={CREW_SCREEN_NAME} component={CrewScreen} />
+        <Stack.Screen
+          name={QUOTES_SCREEN.NAME}
+          component={QuotesScreen}
+          options={{
+            title: QUOTES_SCREEN.TITLE,
+          }}
+        />
+        <Stack.Screen
+          name={CHARACTERS_SCREEN.NAME}
+          component={CharactersScreen}
+          options={{
+            title: CHARACTERS_SCREEN.TITLE,
+          }}
+        />
+        <Stack.Screen
+          name={EPISODES_SCREEN.NAME}
+          component={EpisodesScreen}
+          options={{
+            title: EPISODES_SCREEN.TITLE,
+          }}
+        />
+        <Stack.Screen
+          name={CREW_SCREEN.NAME}
+          component={CrewScreen}
+          options={{
+            title: CREW_SCREEN.TITLE,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   )

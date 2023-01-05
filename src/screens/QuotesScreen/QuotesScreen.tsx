@@ -7,7 +7,7 @@ import { LoadingPrisonMikeContainer } from '../../containers/shared'
 
 import { IQuote } from '../../api/types'
 
-import styles from './styles'
+import styles from './quotesScreenStyles'
 
 const QuotesScreen: React.FunctionComponent = () => {
   const { isLoading, error, data } = useQuery(['quotesData'], fetchQuotes)

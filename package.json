@@ -10,7 +10,7 @@
     "check-types": "npx tsc",
     "test": "jest --watch --coverage=true --changedSince=origin/master",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
+    "format": "prettier --ignore-path .prettierignore --write \"**/*.+(js|ts|json)\""
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.12",

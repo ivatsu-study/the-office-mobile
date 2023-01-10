@@ -6,7 +6,10 @@ interface INavButtonPropTypes {
   navText: string
 }
 
-const NavButton: React.FunctionComponent<INavButtonPropTypes> = ({ onPress, navText }: INavButtonPropTypes) => (
+const NavButton: React.FunctionComponent<INavButtonPropTypes> = ({
+  onPress,
+  navText,
+}: INavButtonPropTypes) => (
   <TouchableOpacity onPress={onPress} style={styles.btnContainer}>
     <Text style={styles.btnText}>{navText}</Text>
   </TouchableOpacity>

@@ -8,13 +8,12 @@ interface ILoadingPrisonMikePropTypes {
   spin: Animated.AnimatedInterpolation
 }
 
-const LoadingPrisonMike: React.FunctionComponent<ILoadingPrisonMikePropTypes> = ({ spin }) => (
+const LoadingPrisonMike: React.FunctionComponent<
+  ILoadingPrisonMikePropTypes
+> = ({ spin }) => (
   <View style={styles.loadingContainer}>
     <Animated.Image
-      style={[
-        styles.image,
-        { transform: [{ rotate: spin }] }
-      ]}
+      style={[styles.image, { transform: [{ rotate: spin }] }]}
       source={PrisonMikeLoadingImage}
     />
   </View>

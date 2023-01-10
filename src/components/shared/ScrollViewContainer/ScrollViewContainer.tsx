@@ -5,7 +5,9 @@ interface IScrollViewContainerPropTypes {
   children: React.ReactNode
 }
 
-const ScrollViewContainer: React.FunctionComponent<IScrollViewContainerPropTypes> = ({ children }: IScrollViewContainerPropTypes) => (
+const ScrollViewContainer: React.FunctionComponent<
+  IScrollViewContainerPropTypes
+> = ({ children }: IScrollViewContainerPropTypes) => (
   <ScrollView style={styles.scrollContainer}>{children}</ScrollView>
 )
 

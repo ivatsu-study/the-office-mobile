@@ -8,9 +8,12 @@ interface IAppContainerPropTypes {
   withStatusBar?: boolean
 }
 
-const AppContainer: React.FunctionComponent<IAppContainerPropTypes> = ({ children, withStatusBar = false }: IAppContainerPropTypes) => (
+const AppContainer: React.FunctionComponent<IAppContainerPropTypes> = ({
+  children,
+  withStatusBar = false,
+}: IAppContainerPropTypes) => (
   <View style={styles.container}>
-    {withStatusBar && (<StatusBar style="auto" />)}
+    {withStatusBar && <StatusBar style="auto" />}
     {children}
   </View>
 )

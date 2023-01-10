@@ -1,7 +1,7 @@
 import { View, Image } from 'react-native'
 
 import OfficeMainImage from '../../../../assets/office.png'
-import styles from './styles'
+import styles from './heroImageStyles'
 
 const HeroImage: React.FunctionComponent = () => (
   <View style={styles.imageContainer}>

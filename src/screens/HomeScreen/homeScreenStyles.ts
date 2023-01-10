@@ -7,10 +7,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
-  navButtonContainer: {
-    flex: 1,
-    width: '80%',
+  quoteContainer: {
+    flex: 0.8,
     justifyContent: 'center',
+    alignItems: 'center',
   },
 })
 

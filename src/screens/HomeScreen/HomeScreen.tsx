@@ -1,32 +1,16 @@
-import type { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { useQuery } from '@tanstack/react-query'
 import { Text, View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { fetchRandomQuote } from '../../api/queries'
 
 import { HeroImage } from '../../components/HomeScreen'
-import { AppContainer, NavButton } from '../../components/shared'
+import { AppContainer } from '../../components/shared'
 import { LoadingPrisonMikeContainer } from '../../containers/shared'
-import {
-  CHARACTERS_SCREEN,
-  CREW_SCREEN,
-  EPISODES_SCREEN,
-  HOME_SCREEN,
-  QUOTES_SCREEN,
-} from '../../navigation/screens'
-import { IRootStackParamList } from '../../navigation/types'
 
 import quotesScreenStyles from '../QuotesScreen/quotesScreenStyles'
-import styles from './styles'
+import styles from './homeScreenStyles'
 
-type HomeScreenPropTypes = NativeStackScreenProps<
-  IRootStackParamList,
-  typeof HOME_SCREEN.NAME
->
-
-const HomeScreen: React.FunctionComponent<HomeScreenPropTypes> = ({
-  navigation,
-}: HomeScreenPropTypes) => {
+const HomeScreen: React.FunctionComponent = () => {
   const {
     isLoading,
     error,
@@ -34,15 +18,6 @@ const HomeScreen: React.FunctionComponent<HomeScreenPropTypes> = ({
   } = useQuery(['randomQuote'], fetchRandomQuote)
 
   const insets = useSafeAreaInsets()
-
-  const navigateToQuotesScreen: () => void = () =>
-    navigation.navigate(QUOTES_SCREEN.NAME)
-  const navigateToCharactersScreen: () => void = () =>
-    navigation.navigate(CHARACTERS_SCREEN.NAME)
-  const navigateToEpisodesScreen: () => void = () =>
-    navigation.navigate(EPISODES_SCREEN.NAME)
-  const navigateToCrewScreen: () => void = () =>
-    navigation.navigate(CREW_SCREEN.NAME)
 
   if (isLoading) {
     return <LoadingPrisonMikeContainer />
@@ -68,29 +43,15 @@ const HomeScreen: React.FunctionComponent<HomeScreenPropTypes> = ({
       </View>
       <HeroImage />
       {quote != null && (
-        <View key={quote._id} style={quotesScreenStyles.quoteContainer}>
-          <Text style={quotesScreenStyles.quoteText}>{quote.content}</Text>
-          <Text
-            style={quotesScreenStyles.quoteAuthor}
-          >{`${quote.character.firstname} ${quote.character.lastname}`}</Text>
+        <View style={styles.quoteContainer}>
+          <View key={quote._id} style={quotesScreenStyles.quoteContainer}>
+            <Text style={quotesScreenStyles.quoteText}>{quote.content}</Text>
+            <Text style={quotesScreenStyles.quoteAuthor}>
+              {`${quote.character.firstname} ${quote.character.lastname}`}
+            </Text>
+          </View>
         </View>
       )}
-
-      <View style={styles.navButtonContainer}>
-        <NavButton
-          onPress={navigateToQuotesScreen}
-          navText={QUOTES_SCREEN.TITLE}
-        />
-        <NavButton
-          onPress={navigateToCharactersScreen}
-          navText={CHARACTERS_SCREEN.TITLE}
-        />
-        <NavButton
-          onPress={navigateToEpisodesScreen}
-          navText={EPISODES_SCREEN.TITLE}
-        />
-        <NavButton onPress={navigateToCrewScreen} navText={CREW_SCREEN.TITLE} />
-      </View>
     </AppContainer>
   )
 }

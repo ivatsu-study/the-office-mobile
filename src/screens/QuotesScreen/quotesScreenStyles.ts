@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
   quoteContainer: {
-    margin: 12,
+    margin: 24,
     padding: 12,
     backgroundColor: '#BFC3C6',
   },

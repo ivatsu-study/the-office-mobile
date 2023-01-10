@@ -8,7 +8,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "check-types": "npx tsc",
-    "test": "jest --watch --coverage=true --changedSince=origin/master",
+    "test": "jest --watch --coverage=false --changedSince=origin/master",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts,.jsx,.tsx .",
     "format": "prettier --ignore-path .prettierignore --write \"**/*.+(js|ts|jsx|tsx|json)\""
   },

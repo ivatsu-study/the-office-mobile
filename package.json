@@ -9,8 +9,8 @@
     "web": "expo start --web",
     "check-types": "npx tsc",
     "test": "jest --watch --coverage=true --changedSince=origin/master",
-    "lint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
-    "format": "prettier --ignore-path .prettierignore --write \"**/*.+(js|ts|json)\""
+    "lint": "eslint --ignore-path .eslintignore --ext .js,.ts,.jsx,.tsx .",
+    "format": "prettier --ignore-path .prettierignore --write \"**/*.+(js|ts|jsx|tsx|json)\""
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.12",
@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@react-native-community/eslint-config": "^3.2.0",
     "@types/jest": "^29.0.0",
     "@types/prop-types": "^15.7.5",
     "@types/react-test-renderer": "^18.0.0",

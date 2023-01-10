@@ -4,6 +4,7 @@ env:
 extends:
   - plugin:react/recommended
   - standard-with-typescript
+  - '@react-native-community'
   - prettier
 overrides: []
 parser: '@typescript-eslint/parser'

@@ -9,8 +9,10 @@
     "web": "expo start --web",
     "check-types": "npx tsc",
     "test": "jest --watch --coverage=false --changedSince=origin/master",
+    "test:ci": "jest --coverage=false",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts,.jsx,.tsx .",
-    "format": "prettier --ignore-path .prettierignore --write \"**/*.+(js|ts|jsx|tsx|json)\""
+    "format": "prettier --ignore-path .prettierignore --write \"**/*.+(js|ts|jsx|tsx|json)\"",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.12",
@@ -43,6 +45,7 @@
     "eslint-plugin-n": "^15.2.5",
     "eslint-plugin-promise": "^6.0.1",
     "eslint-plugin-react": "^7.31.8",
+    "husky": "^8.0.3",
     "prettier": "^2.8.1",
     "react-test-renderer": "^18.2.0",
     "typescript": "^4.8.3"

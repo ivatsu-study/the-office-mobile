@@ -6,7 +6,7 @@ exports[`<HeroImage /> renders correctly 1`] = `
     Object {
       "aspectRatio": 1.8,
       "height": 200,
-      "width": 200,
+      "width": "100%",
     }
   }
 >

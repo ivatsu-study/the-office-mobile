@@ -13,6 +13,7 @@ import {
   HOME_SCREEN,
   QUOTES_SCREEN,
 } from './screens'
+import TabBar from './TabBar'
 
 const Tab = createBottomTabNavigator()
 
@@ -20,9 +21,8 @@ const TabNavigationStack: () => JSX.Element = () => {
   return (
     <Tab.Navigator
       initialRouteName={HOME_SCREEN.NAME}
-      screenOptions={{
-        tabBarActiveTintColor: '#e91e63',
-      }}
+      // eslint-disable-next-line react/no-unstable-nested-components
+      tabBar={props => <TabBar {...props} />}
     >
       <Tab.Screen
         name={HOME_SCREEN.NAME}

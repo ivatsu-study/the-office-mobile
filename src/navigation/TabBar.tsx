@@ -1,4 +1,4 @@
-import {
+import type {
   BottomTabDescriptorMap,
   BottomTabNavigationEventMap,
 } from '@react-navigation/bottom-tabs/lib/typescript/src/types'
@@ -17,6 +17,7 @@ import {
   Text,
 } from 'react-native'
 import { EdgeInsets } from 'react-native-safe-area-context'
+import { Assign, Extract } from 'utility-types'
 
 const windowWidth = Dimensions.get('window').width
 const windowHeight = Dimensions.get('window').height
@@ -30,6 +31,12 @@ interface ITabBar {
   navigation: NavigationHelpers<ParamListBase, BottomTabNavigationEventMap>
   insets: EdgeInsets
 }
+
+interface IRoute {
+  route: Extract<TabNavigationState<ParamListBase>['routes'], 0>
+}
+
+type OnTabPress = Assign<IRoute, { isFocused: boolean }>
 
 const TabBar = ({
   state,
@@ -53,11 +60,36 @@ const TabBar = ({
     animate(state.index)
   }, [animate, state.index])
 
+  const onTabPress = React.useCallback(
+    ({ route, isFocused }: OnTabPress): void => {
+      const event = navigation.emit({
+        type: 'tabPress',
+        target: route.key,
+        canPreventDefault: true,
+      })
+
+      if (!isFocused && !event.defaultPrevented) {
+        navigation.navigate(route.name)
+      }
+    },
+    [navigation],
+  )
+
+  const onTabLongPress = React.useCallback(
+    ({ route }: IRoute) => {
+      navigation.emit({
+        type: 'tabLongPress',
+        target: route.key,
+      })
+    },
+    [navigation],
+  )
+
   return (
     <View
       style={[
         styles.container,
-        // Make sure that the safe area is correct
+        // apply the bottom safe area insets
         { paddingBottom: insets.bottom },
       ]}
     >
@@ -76,27 +108,7 @@ const TabBar = ({
         {state.routes.map((route, index) => {
           const { options } = descriptors[route.key]
           const label = options.tabBarLabel ?? route.name
-
           const isFocused = state.index === index
-
-          const onPress = (): void => {
-            const event = navigation.emit({
-              type: 'tabPress',
-              target: route.key,
-              canPreventDefault: true,
-            })
-
-            if (!isFocused && !event.defaultPrevented) {
-              navigation.navigate(route.name)
-            }
-          }
-
-          const onLongPress = (): void => {
-            navigation.emit({
-              type: 'tabLongPress',
-              target: route.key,
-            })
-          }
 
           return typeof label === 'string' ? (
             <TouchableWithoutFeedback
@@ -104,13 +116,15 @@ const TabBar = ({
               accessibilityState={isFocused ? { selected: true } : {}}
               accessibilityLabel={options.tabBarAccessibilityLabel}
               testID={options.tabBarTestID}
-              onPress={onPress}
-              onLongPress={onLongPress}
+              onPress={() => onTabPress({ route, isFocused })}
+              onLongPress={() => onTabLongPress({ route })}
               style={styles.tabButton}
               key={`${index}--${route.key}`}
             >
               <View style={styles.innerView}>
-                <Text>{label}</Text>
+                <Text style={isFocused && styles.tabBarItemFocused}>
+                  {label}
+                </Text>
               </View>
             </TouchableWithoutFeedback>
           ) : null
@@ -151,6 +165,10 @@ const styles = StyleSheet.create({
     width: TAB_BAR_WIDTH,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  tabBarItemFocused: {
+    fontWeight: '600',
+    color: '#e91e63',
   },
 })
 

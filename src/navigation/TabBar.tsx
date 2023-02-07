@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
   animatedView: {
     width: TAB_BAR_WIDTH,
     height: ANIMATED_PART_HEIGHT,
-    backgroundColor: '#e91e63',
+    backgroundColor: '#033E5E',
   },
   animatedWrapper: {
     width: TAB_BAR_WIDTH,
@@ -167,8 +167,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   tabBarItemFocused: {
-    fontWeight: '600',
-    color: '#e91e63',
+    fontWeight: '700',
+    color: '#033E5E',
   },
 })
 

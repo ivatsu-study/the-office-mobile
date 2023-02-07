@@ -5,7 +5,7 @@ import { fetchCharacters } from '../../api/queries'
 import { ICharacter } from '../../api/types'
 import { AppContainer, ScrollViewContainer } from '../../components/shared'
 import { LoadingPrisonMikeContainer } from '../../containers/shared'
-import styles from './styles'
+import styles from './charactersScreen.styles'
 
 const CharactersScreen: React.FunctionComponent = () => {
   const { isLoading, error, data } = useQuery(

@@ -1,6 +1,6 @@
 import { GestureResponderEvent, Text, TouchableOpacity } from 'react-native'
 
-import styles from './styles'
+import styles from './navButton.styles'
 
 interface INavButtonPropTypes {
   onPress: (event: GestureResponderEvent) => void

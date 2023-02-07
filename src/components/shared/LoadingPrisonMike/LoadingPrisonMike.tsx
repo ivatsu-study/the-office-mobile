@@ -2,7 +2,7 @@ import React from 'react'
 import { Animated, View } from 'react-native'
 
 import PrisonMikeLoadingImage from '../../../../assets/prison-mike.png'
-import styles from './styles'
+import styles from './loadingPrisonMike.styles'
 
 interface ILoadingPrisonMikePropTypes {
   spin: Animated.AnimatedInterpolation

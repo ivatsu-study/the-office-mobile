@@ -5,7 +5,7 @@ import { fetchCrew } from '../../api/queries'
 import { ICrewMember } from '../../api/types'
 import { AppContainer, ScrollViewContainer } from '../../components/shared'
 import { LoadingPrisonMikeContainer } from '../../containers/shared'
-import styles from './styles'
+import styles from './crewScreen.styles'
 
 const CrewScreen: React.FunctionComponent = () => {
   const { isLoading, error, data } = useQuery(['crewData'], fetchCrew)

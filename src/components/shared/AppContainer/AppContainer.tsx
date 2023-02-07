@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar'
 import { View } from 'react-native'
 
-import styles from './styles'
+import styles from './appContainer.styles'
 
 interface IAppContainerPropTypes {
   children: React.ReactNode

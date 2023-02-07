@@ -6,8 +6,8 @@ import { fetchRandomQuote } from '../../api/queries'
 import { HeroImage } from '../../components/HomeScreen'
 import { AppContainer } from '../../components/shared'
 import { LoadingPrisonMikeContainer } from '../../containers/shared'
-import quotesScreenStyles from '../QuotesScreen/quotesScreenStyles'
-import styles from './homeScreenStyles'
+import quotesScreenStyles from '../QuotesScreen/quotesScreen.styles'
+import styles from './homeScreen.styles'
 
 const HomeScreen: React.FunctionComponent = () => {
   const {

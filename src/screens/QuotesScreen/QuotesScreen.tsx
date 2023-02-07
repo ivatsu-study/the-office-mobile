@@ -1,12 +1,10 @@
-import { Text, View } from 'react-native'
 import { useQuery } from '@tanstack/react-query'
+import { Text, View } from 'react-native'
 
 import { fetchQuotes } from '../../api/queries'
+import { IQuote } from '../../api/types'
 import { AppContainer, ScrollViewContainer } from '../../components/shared'
 import { LoadingPrisonMikeContainer } from '../../containers/shared'
-
-import { IQuote } from '../../api/types'
-
 import styles from './quotesScreenStyles'
 
 const QuotesScreen: React.FunctionComponent = () => {

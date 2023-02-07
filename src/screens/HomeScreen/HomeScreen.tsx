@@ -1,12 +1,11 @@
 import { useQuery } from '@tanstack/react-query'
 import { Text, View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
-import { fetchRandomQuote } from '../../api/queries'
 
+import { fetchRandomQuote } from '../../api/queries'
 import { HeroImage } from '../../components/HomeScreen'
 import { AppContainer } from '../../components/shared'
 import { LoadingPrisonMikeContainer } from '../../containers/shared'
-
 import quotesScreenStyles from '../QuotesScreen/quotesScreenStyles'
 import styles from './homeScreenStyles'
 

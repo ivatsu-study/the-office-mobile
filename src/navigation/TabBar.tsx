@@ -9,12 +9,12 @@ import {
 } from '@react-navigation/native'
 import React, { useEffect, useRef } from 'react'
 import {
+  Animated,
   Dimensions,
   StyleSheet,
-  View,
-  TouchableWithoutFeedback,
-  Animated,
   Text,
+  TouchableWithoutFeedback,
+  View,
 } from 'react-native'
 import { EdgeInsets } from 'react-native-safe-area-context'
 import { Assign, Extract } from 'utility-types'

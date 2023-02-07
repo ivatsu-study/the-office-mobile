@@ -1,4 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native'
+
 import TabNavigationStack from './TabNavigationStack'
 
 const NavigationStack: React.FunctionComponent = () => {

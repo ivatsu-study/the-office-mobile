@@ -1,5 +1,6 @@
 import React from 'react'
 import { Animated, Easing } from 'react-native'
+
 import LoadingPrisonMike from '../../../components/shared/LoadingPrisonMike/LoadingPrisonMike'
 
 const LoadingPrisonMikeContainer: React.FunctionComponent = () => {

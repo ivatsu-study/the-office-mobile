@@ -1,4 +1,5 @@
 import { ScrollView } from 'react-native'
+
 import styles from './styles'
 
 interface IScrollViewContainerPropTypes {

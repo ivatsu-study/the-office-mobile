@@ -15,4 +15,10 @@ parserOptions:
 plugins:
   - react
   - '@typescript-eslint'
-rules: { react/react-in-jsx-scope: 0 }
+  - 'simple-import-sort'
+rules:
+  {
+    react/react-in-jsx-scope: 0,
+    'simple-import-sort/imports': 1,
+    'simple-import-sort/exports': 1,
+  }

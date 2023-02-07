@@ -1,4 +1,4 @@
-import { View, Image } from 'react-native'
+import { Image, View } from 'react-native'
 
 import OfficeMainImage from '../../../../assets/office.png'
 import styles from './heroImageStyles'

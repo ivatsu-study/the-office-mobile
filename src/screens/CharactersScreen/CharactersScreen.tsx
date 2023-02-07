@@ -1,11 +1,10 @@
-import { Text, View } from 'react-native'
 import { useQuery } from '@tanstack/react-query'
+import { Text, View } from 'react-native'
 
 import { fetchCharacters } from '../../api/queries'
 import { ICharacter } from '../../api/types'
 import { AppContainer, ScrollViewContainer } from '../../components/shared'
 import { LoadingPrisonMikeContainer } from '../../containers/shared'
-
 import styles from './styles'
 
 const CharactersScreen: React.FunctionComponent = () => {

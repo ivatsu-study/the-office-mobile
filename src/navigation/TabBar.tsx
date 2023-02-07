@@ -17,7 +17,7 @@ import {
   View,
 } from 'react-native'
 import { EdgeInsets } from 'react-native-safe-area-context'
-import { Assign, Extract } from 'utility-types'
+import { Assign } from 'utility-types'
 
 const windowWidth = Dimensions.get('window').width
 const windowHeight = Dimensions.get('window').height
@@ -33,7 +33,7 @@ interface ITabBar {
 }
 
 interface IRoute {
-  route: Extract<TabNavigationState<ParamListBase>['routes'], 0>
+  route: TabNavigationState<ParamListBase>['routes'][0]
 }
 
 type OnTabPress = Assign<IRoute, { isFocused: boolean }>

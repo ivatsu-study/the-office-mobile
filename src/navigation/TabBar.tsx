@@ -19,11 +19,14 @@ import {
 import { EdgeInsets } from 'react-native-safe-area-context'
 import { Assign } from 'utility-types'
 
+import { tabScreens } from './screens'
+
 const windowWidth = Dimensions.get('window').width
 const windowHeight = Dimensions.get('window').height
 
-const TAB_BAR_WIDTH = windowWidth / 5
-const ANIMATED_PART_HEIGHT = 5
+const TAB_NUMBER = Object.keys(tabScreens).length
+const TAB_BAR_WIDTH = windowWidth / TAB_NUMBER
+const ANIMATED_PART_HEIGHT = TAB_NUMBER
 
 interface ITabBar {
   state: TabNavigationState<ParamListBase>
